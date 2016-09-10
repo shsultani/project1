@@ -2,6 +2,9 @@
 This python program is taking a series of photos taken on a tripod of an object
 but with a man messing up the shot. And it will use a median filter to remove the 
 man and create one seamless, perfectly taken photo wihout the man in the frame.
+
+github: https://github.com/shsultani/project1/blob/master/project1_1.py
+
 """
 
 from PIL import Image 
@@ -44,7 +47,6 @@ for x in range(0, pictureWidth):
 			myRed, myGreen, myBlue = newImage.getpixel((x,y))
 			
 			redPixelList.append(myRed)
-			"""
 			greenPixelList.append(myGreen)
 			bluePixelList.append(myBlue)
 
@@ -52,13 +54,11 @@ for x in range(0, pictureWidth):
 		medianOdd(redPixelList)
 		medianOdd(greenPixelList)
 		medianOdd(bluePixelList)
-		
 
-		
 		newImage.putpixel((x,y), medianOdd(redPixelList))
 		newImage.putpixel((x,y), medianOdd(greenPixelList))
 		newImage.putpixel((x,y), medianOdd(bluePixelList))
-		"""
+		
 
-print(newImage.getpixel((4,6)))
+newImage.show() 
 
